@@ -28,7 +28,8 @@
         var s2 = [[2002, 10200], [2003, 10800], [2004, 11200], [2005, 11800], [2006, 12400], 
         [2007, 12800], [2008, 13200], [2009, 12600], [2010, 13100]];
 
-        plot1 = $.jqplot("chart1", [s2, s1], {
+        plot1 = $.jqplot("chart1", [s2, s1], 
+		{
             // Turns on animatino for all series in this plot.
             animate: true,
             // Will animate plot on calls to plot1.replot({resetAxes:true})
@@ -37,12 +38,16 @@
                 show: true,
                 zoom: true,
                 looseZoom: true,
-                showTooltip: false
+                showTooltip:true,
+				//followMouse: true, 
+				showTooltipOutsideZoom: true, 
+				constrainOutsideZoom: false
             },
-            series:[
+            series:
+			[
                 {
                     pointLabels: {
-                        show: true
+                        //show: true
                     },
                     renderer: $.jqplot.BarRenderer,
                     showHighlight: false,
@@ -131,14 +136,14 @@
 
 			<div id="chart1" style="width:400px; height:200px"></div>
 			
-			<script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
-			<script type="text/javascript" src="js/shCore.min.js"></script>
-			<script type="text/javascript" src="js/shBrushJScript.min.js"></script>
-			<script type="text/javascript" src="js/shBrushXml.min.js"></script>
-			<script  type="text/javascript" src="js/jqplot.barRenderer.min.js"></script>
-			<script  type="text/javascript" src="js/jqplot.highlighter.min.js"></script>
-			<script  type="text/javascript" src="js/jqplot.cursor.min.js"></script> 
-			<script type="text/javascript" src="js/jqplot.pointLabels.min.js"></script>
+			<script type="text/javascript" src="js/jquery.jqplot.min.js"></script> <!-- Libreria principal para el manejo de las graficas -->
+			<script type="text/javascript" src="js/shCore.min.js"></script> <!-- -->
+			<script type="text/javascript" src="js/shBrushJScript.min.js"></script> <!-- -->
+			<script type="text/javascript" src="js/shBrushXml.min.js"></script> <!-- -->
+			<script  type="text/javascript" src="js/jqplot.barRenderer.min.js"></script> <!-- Dibuja las barras -->
+			<script  type="text/javascript" src="js/jqplot.highlighter.min.js"></script> <!-- Resaltado en los puntos naranja -->
+			<script  type="text/javascript" src="js/jqplot.cursor.min.js"></script> <!-- Cursos mouse -->
+			<script type="text/javascript" src="js/jqplot.pointLabels.min.js"></script><!-- Datos dentro de la grafica -->
 			
 			
 			<p>
